@@ -1,12 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0b0b0b;
-  --background-secondary: #141414;
-  --text-primary: #ffffff;
-  --text-secondary: #a3a3a3;
-  --text-muted: #666666;
-  --border: #2a2a2a;
+  --background: #f6f4ef;
+  --background-secondary: #ece8df;
+  --surface: #ffffff;
+  --text-primary: #0a0a0a;
+  --text-secondary: #555555;
+  --text-muted: #8a8a8a;
+  --border: #d8d2c8;
 }
 
 * {
@@ -36,28 +37,28 @@ a {
 }
 
 ::selection {
-  background: #ffffff;
-  color: #0b0b0b;
+  background: #0a0a0a;
+  color: #f6f4ef;
 }
 
 .section-shell {
-  width: min(100%, 1680px);
+  width: min(100%, 1440px);
   margin-inline: auto;
-  padding: 96px 20px;
+  padding: 104px 20px;
 }
 
 .section-heading {
   display: grid;
-  gap: 28px;
+  gap: 36px;
   align-items: end;
   border-top: 1px solid var(--border);
-  padding-top: 40px;
+  padding-top: 28px;
 }
 
 .section-title {
-  font-size: clamp(56px, 10vw, 140px);
-  font-weight: 650;
-  line-height: 0.88;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 0.9;
   letter-spacing: 0;
   text-transform: uppercase;
   color: var(--text-primary);
@@ -65,10 +66,19 @@ a {
 }
 
 .section-copy {
-  max-width: 720px;
+  max-width: 680px;
   color: var(--text-secondary);
   font-size: 18px;
   line-height: 1.65;
+}
+
+.meta-label {
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+  text-transform: uppercase;
 }
 
 .button-primary,
@@ -77,12 +87,12 @@ a {
   min-height: 56px;
   align-items: center;
   justify-content: center;
-  border: 1px solid #ffffff;
-  padding: 16px 22px;
+  border: 1px solid var(--text-primary);
+  padding: 15px 22px;
   font-size: 12px;
   font-weight: 700;
   line-height: 1.2;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   transition:
     background-color 200ms ease,
@@ -91,26 +101,35 @@ a {
 }
 
 .button-primary {
-  background: #ffffff;
-  color: #0b0b0b;
+  background: var(--text-primary);
+  color: var(--background);
 }
 
 .button-primary:hover {
   background: transparent;
-  color: #ffffff;
+  color: var(--text-primary);
 }
 
 .button-secondary {
-  color: #ffffff;
+  color: var(--text-primary);
 }
 
 .button-secondary:hover {
-  background: #ffffff;
-  color: #0b0b0b;
+  background: var(--text-primary);
+  color: var(--background);
 }
 
 .animate-enter {
   animation: enter 700ms ease both;
+}
+
+.animate-enter-delayed {
+  animation: enter 800ms 140ms ease both;
+}
+
+.line-reveal {
+  transform-origin: left;
+  animation: line-reveal 900ms 260ms ease both;
 }
 
 @keyframes enter {
@@ -125,20 +144,42 @@ a {
   }
 }
 
+@keyframes line-reveal {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
 @media (min-width: 640px) {
   .section-shell {
-    padding-inline: 32px;
+    padding-inline: 40px;
+  }
+
+  .section-title {
+    font-size: 88px;
   }
 }
 
 @media (min-width: 1024px) {
   .section-shell {
-    padding: 128px 48px;
+    padding: 160px 64px;
   }
 
   .section-heading {
-    grid-template-columns: 1fr minmax(360px, 620px);
-    gap: 64px;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .section-heading > :first-child {
+    grid-column: span 7;
+  }
+
+  .section-heading > :last-child {
+    grid-column: 9 / span 4;
   }
 
   .section-copy {
@@ -146,9 +187,15 @@ a {
   }
 }
 
+@media (min-width: 1280px) {
+  .section-title {
+    font-size: 140px;
+  }
+}
+
 @media (max-width: 640px) {
   .section-shell {
-    padding-block: 72px;
+    padding-block: 96px;
   }
 
   .section-copy {
@@ -158,5 +205,16 @@ a {
   .button-primary,
   .button-secondary {
     width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
   }
 }
