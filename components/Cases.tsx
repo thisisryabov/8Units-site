@@ -22,7 +22,7 @@ export function Cases() {
             </p>
           </div>
 
-          <div className="mt-14 grid gap-5 lg:mt-20 lg:grid-cols-6 lg:gap-6">
+          <div className="mt-16 grid gap-8 lg:mt-24 lg:grid-cols-6 lg:gap-8">
             {cases.map((item, index) => (
               <CaseCard key={item.slug} item={item} index={index} />
             ))}

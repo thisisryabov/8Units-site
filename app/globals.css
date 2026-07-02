@@ -24,6 +24,7 @@ body {
   margin: 0;
   background: var(--background);
   color: var(--text-primary);
+  font-size: 17px;
   font-family: Inter, Manrope, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
   letter-spacing: 0;
@@ -44,7 +45,7 @@ a {
 .section-shell {
   width: min(100%, 1440px);
   margin-inline: auto;
-  padding: 104px 20px;
+  padding: 112px 20px;
 }
 
 .section-heading {
@@ -68,16 +69,16 @@ a {
 .section-copy {
   max-width: 680px;
   color: var(--text-secondary);
-  font-size: 18px;
-  line-height: 1.7;
+  font-size: 19px;
+  line-height: 1.72;
 }
 
 .meta-label {
   color: var(--text-muted);
   font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.12em;
-  line-height: 1.4;
+  letter-spacing: 0.1em;
+  line-height: 1.45;
   text-transform: uppercase;
 }
 
@@ -134,30 +135,24 @@ a {
   text-transform: uppercase;
 }
 
-.pipeline-step {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: center;
-  gap: 14px;
-}
-
 .button-primary,
 .button-secondary {
   display: inline-flex;
-  min-height: 56px;
+  min-height: 60px;
   align-items: center;
   justify-content: center;
   border: 1px solid var(--text-primary);
-  padding: 15px 22px;
-  font-size: 12px;
+  padding: 17px 24px;
+  font-size: 13px;
   font-weight: 700;
   line-height: 1.2;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   transition:
     background-color 200ms ease,
     color 200ms ease,
-    border-color 200ms ease;
+    border-color 200ms ease,
+    transform 200ms ease;
 }
 
 .button-primary {
@@ -168,6 +163,7 @@ a {
 .button-primary:hover {
   background: transparent;
   color: var(--text-primary);
+  transform: translateY(-1px);
 }
 
 .button-secondary {
@@ -177,6 +173,7 @@ a {
 .button-secondary:hover {
   background: var(--text-primary);
   color: var(--background);
+  transform: translateY(-1px);
 }
 
 .animate-enter {
@@ -198,6 +195,12 @@ a {
 
 .case-card {
   animation: enter 760ms ease both;
+}
+
+.case-card-copy {
+  color: var(--text-secondary);
+  font-size: 18px;
+  line-height: 1.72;
 }
 
 .case-card:nth-child(2) {
@@ -258,7 +261,7 @@ a {
 
 @media (min-width: 1024px) {
   .section-shell {
-    padding: 160px 64px;
+    padding: 168px 64px;
   }
 
   .section-heading {
@@ -275,7 +278,7 @@ a {
   }
 
   .section-copy {
-    font-size: 20px;
+    font-size: 21px;
   }
 
   .case-title-long {
@@ -304,11 +307,11 @@ a {
 
 @media (max-width: 640px) {
   .section-shell {
-    padding-block: 96px;
+    padding-block: 104px;
   }
 
   .section-copy {
-    font-size: 17px;
+    font-size: 18px;
     line-height: 1.72;
   }
 

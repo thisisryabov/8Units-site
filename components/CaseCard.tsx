@@ -14,7 +14,7 @@ export function CaseCard({ item, index }: CaseCardProps) {
   const spanClass = index === 0 ? "lg:col-span-6" : "lg:col-span-3";
   const offsetClass = index === 2 || index === 5 ? "lg:mt-16" : "";
   const articleClass = [
-    "case-card group grid overflow-hidden border border-[#D8D2C8] bg-[#FFFFFF]/64 transition duration-300 hover:-translate-y-1 hover:border-[#0A0A0A] hover:bg-[#FFFFFF]",
+    "case-card group grid overflow-hidden border border-[#D8D2C8] bg-[#FFFFFF]/68 transition duration-300 hover:-translate-y-1 hover:border-[#0A0A0A] hover:bg-[#FFFFFF]",
     "lg:grid-cols-12",
     spanClass,
     offsetClass,
@@ -26,8 +26,8 @@ export function CaseCard({ item, index }: CaseCardProps) {
     <article className={articleClass}>
       <div
         className={[
-          "relative flex min-h-72 flex-col justify-between border-b border-[#D8D2C8] bg-[#ECE8DF] p-5 sm:p-7 lg:border-b-0 lg:border-r",
-          isLead ? "lg:col-span-7 lg:min-h-[520px]" : "lg:col-span-12 lg:min-h-[380px]",
+          "relative flex min-h-80 flex-col justify-between border-b border-[#D8D2C8] bg-[#ECE8DF] p-6 sm:p-8 lg:border-b-0 lg:border-r",
+          isLead ? "lg:col-span-7 lg:min-h-[580px]" : "lg:col-span-12 lg:min-h-[410px]",
         ].join(" ")}
       >
         <div className="pointer-events-none absolute inset-0">
@@ -50,9 +50,9 @@ export function CaseCard({ item, index }: CaseCardProps) {
             {number}
           </span>
           <div className="text-right">
-            <span className="meta-label block text-[#555555]">{item.category}</span>
+            <span className="meta-label block text-[#555555]">FORMAT / {item.category}</span>
             <span className="meta-label mt-2 block">PLAY / SOON</span>
-            <span className="meta-label mt-2 block">16:9 / FRAME</span>
+            <span className="meta-label mt-2 block">FRAME / 16:9</span>
           </div>
         </div>
 
@@ -77,8 +77,8 @@ export function CaseCard({ item, index }: CaseCardProps) {
 
       <div
         className={[
-          "flex flex-col justify-between gap-12 p-5 sm:p-7",
-          isLead ? "lg:col-span-5 lg:p-10" : "lg:col-span-12",
+          "flex flex-col justify-between gap-12 p-6 sm:p-8",
+          isLead ? "lg:col-span-5 lg:p-12" : "lg:col-span-12",
         ].join(" ")}
       >
         <div>
@@ -103,7 +103,7 @@ export function CaseCard({ item, index }: CaseCardProps) {
               </div>
             </div>
           ) : null}
-          <p className="max-w-xl text-lg leading-relaxed text-[#555555]">
+          <p className="case-card-copy max-w-xl">
             {item.description}
           </p>
         </div>
@@ -112,7 +112,7 @@ export function CaseCard({ item, index }: CaseCardProps) {
           {hasVideo ? (
             <a
               href={item.externalVideoUrl || item.videoEmbedUrl}
-              className="inline-flex w-fit items-center border border-[#0A0A0A] px-5 py-4 text-xs font-bold uppercase tracking-[0.12em] text-[#0A0A0A] transition-colors duration-200 hover:bg-[#0A0A0A] hover:text-[#F6F4EF]"
+              className="inline-flex min-h-12 w-fit items-center border border-[#0A0A0A] px-6 py-4 text-xs font-bold uppercase tracking-[0.1em] text-[#0A0A0A] transition-colors duration-200 hover:bg-[#0A0A0A] hover:text-[#F6F4EF]"
             >
               Смотреть проект
               <span className="ml-3 transition-transform duration-200 group-hover:translate-x-1">
@@ -122,7 +122,7 @@ export function CaseCard({ item, index }: CaseCardProps) {
           ) : (
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <button
-                className="inline-flex w-fit cursor-default items-center border border-[#D8D2C8] px-5 py-4 text-xs font-bold uppercase tracking-[0.12em] text-[#555555]"
+                className="inline-flex min-h-12 w-fit cursor-default items-center border border-[#0A0A0A] px-6 py-4 text-xs font-bold uppercase tracking-[0.1em] text-[#0A0A0A]"
                 type="button"
                 disabled
               >
@@ -131,8 +131,8 @@ export function CaseCard({ item, index }: CaseCardProps) {
               <p className="text-sm text-[#8A8A8A]">Видео скоро будет добавлено</p>
             </div>
           )}
-          <div className="flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.12em] text-[#8A8A8A]">
-            <span>PRODUCTION</span>
+          <div className="flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.1em] text-[#8A8A8A]">
+            <span>STATUS / COMING SOON</span>
             <span className="h-px flex-1 bg-[#D8D2C8]" />
             <span>FRAME {number}</span>
           </div>

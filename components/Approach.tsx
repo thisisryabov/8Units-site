@@ -26,16 +26,6 @@ const principles = [
   },
 ];
 
-const process = [
-  "ЗАДАЧА",
-  "ИДЕЯ",
-  "ФОРМАТ",
-  "КОМАНДА",
-  "ПРОИЗВОДСТВО",
-  "ПОСТ",
-  "РЕЗУЛЬТАТ",
-];
-
 export function Approach() {
   return (
     <section id="approach" className="section-shell scroll-mt-24">
@@ -67,7 +57,7 @@ export function Approach() {
           </div>
 
           <div className="grid border-b border-[#D8D2C8] lg:grid-cols-10">
-            <div className="hidden border-r border-[#D8D2C8] py-10 lg:col-span-2 lg:block">
+            <div className="hidden border-r border-[#D8D2C8] py-12 lg:col-span-2 lg:block">
               <p className="meta-label sticky top-28 max-w-[180px]">
                 PRINCIPLES / 01-05
               </p>
@@ -77,36 +67,18 @@ export function Approach() {
               {principles.map((principle, index) => (
                 <article
                   key={principle.title}
-                  className="grid gap-5 border-t border-[#D8D2C8] py-8 lg:grid-cols-8 lg:gap-6 lg:pl-10"
+                  className="grid gap-6 border-t border-[#D8D2C8] py-10 lg:grid-cols-8 lg:gap-8 lg:py-12 lg:pl-12"
                 >
                   <p className="meta-label text-[#0A0A0A] lg:col-span-2">
                     {String(index + 1).padStart(2, "0")} / {principle.title}
                   </p>
-                  <h3 className="text-3xl font-bold leading-tight tracking-[0] text-[#0A0A0A] lg:col-span-3">
+                  <h3 className="text-[34px] font-bold leading-tight tracking-[0] text-[#0A0A0A] lg:col-span-3 lg:text-[38px]">
                     {principle.title}
                   </h3>
-                  <p className="text-[17px] leading-relaxed text-[#555555] lg:col-span-3">
+                  <p className="text-[18px] leading-relaxed text-[#555555] lg:col-span-3 lg:text-[19px]">
                     {principle.description}
                   </p>
                 </article>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-10 border-y border-[#D8D2C8] bg-[#ECE8DF] py-6">
-            <div className="grid gap-4 px-5 sm:px-6 md:flex md:flex-wrap md:items-center md:px-8">
-              {process.map((step, index) => (
-                <div key={step} className="pipeline-step md:flex md:gap-4">
-                  <span className="inline-flex h-7 w-7 items-center justify-center border border-[#D8D2C8] text-[11px] font-bold text-[#8A8A8A] md:hidden">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <span className="text-sm font-bold uppercase tracking-[0.12em] text-[#0A0A0A]">
-                    {step}
-                  </span>
-                  {index < process.length - 1 ? (
-                    <span className="col-start-1 row-start-2 h-8 w-px justify-self-center bg-[#D8D2C8] md:h-px md:w-10" />
-                  ) : null}
-                </div>
               ))}
             </div>
           </div>
