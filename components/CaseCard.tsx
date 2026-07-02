@@ -9,10 +9,20 @@ export function CaseCard({ item, index }: CaseCardProps) {
   const number = String(index + 1).padStart(2, "0");
   const hasVideo = Boolean(item.videoEmbedUrl || item.externalVideoUrl);
   const isLead = index === 0;
+  const spanClass =
+    index === 0
+      ? "lg:col-span-6"
+      : index === 3
+        ? "lg:col-span-2"
+        : index === 4
+          ? "lg:col-span-4"
+          : "lg:col-span-3";
+  const offsetClass = index === 2 || index === 5 ? "lg:mt-16" : "";
   const articleClass = [
-    "group grid overflow-hidden border border-[#D8D2C8] bg-[#FFFFFF]/64 transition duration-300 hover:-translate-y-1 hover:border-[#0A0A0A] hover:bg-[#FFFFFF]",
+    "case-card group grid overflow-hidden border border-[#D8D2C8] bg-[#FFFFFF]/64 transition duration-300 hover:-translate-y-1 hover:border-[#0A0A0A] hover:bg-[#FFFFFF]",
     "lg:grid-cols-12",
-    isLead ? "lg:col-span-2" : "",
+    spanClass,
+    offsetClass,
   ]
     .filter(Boolean)
     .join(" ");
@@ -22,13 +32,18 @@ export function CaseCard({ item, index }: CaseCardProps) {
       <div
         className={[
           "relative flex min-h-72 flex-col justify-between border-b border-[#D8D2C8] bg-[#ECE8DF] p-5 sm:p-7 lg:border-b-0 lg:border-r",
-          isLead ? "lg:col-span-7 lg:min-h-[520px]" : "lg:col-span-12",
+          isLead ? "lg:col-span-7 lg:min-h-[520px]" : "lg:col-span-12 lg:min-h-[380px]",
         ].join(" ")}
       >
-        <div className="absolute inset-0 opacity-60 [background-image:linear-gradient(#D8D2C8_1px,transparent_1px),linear-gradient(90deg,#D8D2C8_1px,transparent_1px)] [background-size:72px_72px]" />
+        <div className="pointer-events-none absolute inset-0">
+          <span className="absolute inset-y-0 left-1/3 w-px bg-[#D8D2C8]" />
+          <span className="absolute inset-y-0 left-2/3 w-px bg-[#D8D2C8]" />
+          <span className="absolute inset-x-0 top-1/3 h-px bg-[#D8D2C8]" />
+          <span className="absolute inset-x-0 top-2/3 h-px bg-[#D8D2C8]" />
+        </div>
 
         <div className="relative flex items-start justify-between gap-6">
-          <span className="text-[64px] font-bold leading-none text-[#0A0A0A] sm:text-[88px] lg:text-[120px]">
+          <span className="text-[64px] font-bold leading-none text-[#0A0A0A] sm:text-[88px] lg:text-[112px] xl:text-[120px]">
             {number}
           </span>
           <div className="text-right">
@@ -41,7 +56,7 @@ export function CaseCard({ item, index }: CaseCardProps) {
           <p className="meta-label mb-4">
             {item.client}
           </p>
-          <h3 className="break-words text-[42px] font-bold uppercase leading-[0.92] tracking-[0] text-[#0A0A0A] sm:text-[64px] lg:text-[76px]">
+          <h3 className="break-words text-[42px] font-bold uppercase leading-[0.92] tracking-[0] text-[#0A0A0A] sm:text-[64px] lg:text-[68px] xl:text-[76px]">
             {item.title}
           </h3>
         </div>
