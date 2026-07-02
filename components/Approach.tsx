@@ -28,7 +28,7 @@ const principles = [
 
 export function Approach() {
   return (
-    <section id="approach" className="section-shell scroll-mt-24">
+    <section id="approach" className="section-shell section-tight-after scroll-mt-24">
       <div className="grid gap-10 lg:grid-cols-12 lg:gap-6">
         <div className="section-rail lg:col-span-2">
           <p className="meta-label">HOW WE WORK / PRODUCTION LOGIC</p>
