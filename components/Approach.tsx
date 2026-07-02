@@ -27,60 +27,71 @@ const principles = [
 ];
 
 const process = [
-  "Задача",
-  "Идея",
-  "Формат",
-  "Команда",
-  "Производство",
-  "Постпродакшн",
-  "Результат",
+  "ЗАДАЧА",
+  "ИДЕЯ",
+  "ФОРМАТ",
+  "КОМАНДА",
+  "ПРОИЗВОДСТВО",
+  "ПОСТ",
+  "РЕЗУЛЬТАТ",
 ];
 
 export function Approach() {
   return (
     <section id="approach" className="section-shell scroll-mt-24">
-      <div className="grid gap-10 border-y border-[#2A2A2A] py-12 lg:grid-cols-[minmax(0,0.95fr)_minmax(360px,0.65fr)] lg:gap-16 lg:py-20">
-        <div>
+      <div className="grid gap-12 border-y border-[#D8D2C8] py-12 lg:grid-cols-12 lg:gap-6 lg:py-20">
+        <div className="lg:col-span-7">
+          <p className="meta-label mb-6">HOW WE WORK / PRODUCTION LOGIC</p>
           <h2 className="section-title">
             НЕ НАЧИНАЕМ
             <br />С КАМЕРЫ
           </h2>
         </div>
-        <p className="section-copy self-end">
-          Мы работаем не от съемочного дня, а от задачи. Сначала понимаем, зачем
-          нужно видео, где оно будет жить, кто его увидит и какой результат
-          должен появиться. Потом подбираем формат, команду и способ производства.
-        </p>
+
+        <div className="lg:col-span-5 lg:col-start-8 lg:self-end">
+          <p className="section-copy">
+            Мы работаем не от съемочного дня, а от задачи. Сначала понимаем,
+            зачем нужно видео, где оно будет жить, кто его увидит и какой
+            результат должен появиться. Потом подбираем формат, команду и способ
+            производства.
+          </p>
+        </div>
       </div>
 
-      <div className="mt-10 grid border-t border-[#2A2A2A] lg:grid-cols-5">
-        {principles.map((principle, index) => (
-          <article
-            key={principle.title}
-            className="border-b border-[#2A2A2A] py-8 lg:border-r lg:px-6 lg:last:border-r-0"
-          >
-            <p className="mb-10 text-sm font-medium text-[#666666]">
-              {String(index + 1).padStart(2, "0")}
-            </p>
-            <h3 className="mb-5 text-2xl font-semibold leading-tight text-white">
-              {principle.title}
-            </h3>
-            <p className="text-base leading-relaxed text-[#A3A3A3]">
-              {principle.description}
-            </p>
-          </article>
-        ))}
+      <div className="grid border-b border-[#D8D2C8] lg:grid-cols-12">
+        <div className="hidden border-r border-[#D8D2C8] py-10 lg:col-span-3 lg:block">
+          <p className="meta-label sticky top-28 max-w-[180px]">PRINCIPLES / 01-05</p>
+        </div>
+
+        <div className="lg:col-span-9">
+          {principles.map((principle, index) => (
+            <article
+              key={principle.title}
+              className="grid gap-5 border-t border-[#D8D2C8] py-8 lg:grid-cols-9 lg:gap-6 lg:pl-10"
+            >
+              <p className="meta-label text-[#0A0A0A] lg:col-span-2">
+                {String(index + 1).padStart(2, "0")} / {principle.title}
+              </p>
+              <h3 className="text-3xl font-bold leading-tight tracking-[0] text-[#0A0A0A] lg:col-span-3">
+                {principle.title}
+              </h3>
+              <p className="text-base leading-relaxed text-[#555555] lg:col-span-4">
+                {principle.description}
+              </p>
+            </article>
+          ))}
+        </div>
       </div>
 
-      <div className="mt-10 border border-[#2A2A2A] bg-[#141414] p-5 sm:p-6 lg:p-8">
-        <div className="flex flex-col gap-4 md:flex-row md:flex-wrap md:items-center">
+      <div className="mt-10 border-y border-[#D8D2C8] bg-[#ECE8DF] py-6">
+        <div className="flex flex-col gap-4 px-5 sm:px-6 md:flex-row md:flex-wrap md:items-center md:px-8">
           {process.map((step, index) => (
             <div key={step} className="flex flex-col gap-4 md:flex-row md:items-center">
-              <span className="text-sm font-semibold uppercase tracking-[0.16em] text-white">
+              <span className="text-sm font-bold uppercase tracking-[0.12em] text-[#0A0A0A]">
                 {step}
               </span>
               {index < process.length - 1 ? (
-                <span className="h-8 w-px bg-[#2A2A2A] md:h-px md:w-10" />
+                <span className="h-8 w-px bg-[#D8D2C8] md:h-px md:w-10" />
               ) : null}
             </div>
           ))}
