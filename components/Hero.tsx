@@ -14,9 +14,11 @@ export function Hero() {
         </p>
       </div>
 
-      <aside className="mt-10 hidden border-l border-[#D8D2C8] pl-5 lg:col-span-2 lg:row-span-3 lg:row-start-1 lg:block">
+      <aside className="mt-10 hidden border-l border-[#D8D2C8] pl-5 lg:col-span-2 lg:row-span-4 lg:row-start-1 lg:block">
         <p className="meta-label animate-enter-delayed">COVER / 8UNITS</p>
-        <p className="editorial-number mt-12 text-[#0A0A0A]">01</p>
+        <p className="editorial-number mt-16 text-[#0A0A0A] opacity-[0.92]">01</p>
+        <div className="mt-12 h-px w-16 bg-[#D8D2C8]" />
+        <p className="meta-label mt-6 max-w-[140px]">FRAME / OPENING PAGE</p>
       </aside>
 
       <div className="animate-enter lg:col-span-10 lg:col-start-3 lg:row-start-2 lg:self-end">
@@ -31,7 +33,7 @@ export function Hero() {
 
       <div className="line-reveal mt-8 h-px bg-[#D8D2C8] lg:col-span-10 lg:col-start-3 lg:row-start-3" />
 
-      <div className="mt-8 grid gap-8 lg:col-span-10 lg:col-start-3 lg:row-start-4 lg:grid-cols-10 lg:gap-6">
+      <div className="mt-10 grid gap-8 lg:col-span-10 lg:col-start-3 lg:row-start-4 lg:grid-cols-10 lg:gap-6">
         <div className="hidden border-l border-[#D8D2C8] pl-5 lg:col-span-2 lg:block">
           <p className="meta-label">PRODUCTION MANIFESTO / 01</p>
         </div>
@@ -42,7 +44,7 @@ export function Hero() {
           препродакшна до съемки, постпродакшна и финальной сдачи.
         </p>
 
-        <div className="flex flex-col gap-6 lg:col-span-3 lg:col-start-8">
+        <div className="flex flex-col gap-7 lg:col-span-3 lg:col-start-8">
           <div className="flex flex-col gap-3 sm:flex-row">
             <a className="button-primary" href="#cases">
               Смотреть кейсы

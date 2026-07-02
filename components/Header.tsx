@@ -1,13 +1,13 @@
 const navItems = [
-  { label: "Cases", href: "#cases" },
-  { label: "Approach", href: "#approach" },
-  { label: "Contact", href: "#contact" },
+  { label: "Работы", href: "#cases" },
+  { label: "Подход", href: "#approach" },
+  { label: "Контакт", href: "#contact" },
 ];
 
 export function Header() {
   return (
-    <header className="sticky inset-x-0 top-0 z-50 border-b border-[#D8D2C8] bg-[#F6F4EF]/92 backdrop-blur-xl">
-      <div className="mx-auto grid h-16 max-w-[1440px] grid-cols-[1fr_auto] items-center gap-6 px-5 sm:px-10 lg:h-[72px] lg:grid-cols-12 lg:px-16">
+    <header className="sticky inset-x-0 top-0 z-50 border-b border-[#D8D2C8] bg-[#F6F4EF]/94 backdrop-blur-xl">
+      <div className="mx-auto grid h-[68px] max-w-[1440px] grid-cols-[1fr_auto] items-center gap-4 px-5 sm:px-10 lg:h-[72px] lg:grid-cols-12 lg:gap-6 lg:px-16">
         <a
           href="#top"
           className="text-sm font-bold uppercase tracking-[0.14em] text-[#0A0A0A] lg:col-span-3"

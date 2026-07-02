@@ -69,7 +69,7 @@ a {
   max-width: 680px;
   color: var(--text-secondary);
   font-size: 18px;
-  line-height: 1.65;
+  line-height: 1.7;
 }
 
 .meta-label {
@@ -96,6 +96,49 @@ a {
   gap: 24px;
   border-top: 1px solid var(--border);
   padding-top: 20px;
+}
+
+.case-title {
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+  text-wrap: balance;
+}
+
+.case-title-long {
+  font-size: clamp(32px, 8vw, 52px);
+  line-height: 0.94;
+}
+
+.case-title-solid {
+  font-size: clamp(30px, 7vw, 44px);
+  line-height: 0.94;
+}
+
+.production-meta {
+  display: grid;
+  gap: 10px;
+  border-block: 1px solid var(--border);
+  padding-block: 16px;
+}
+
+.production-meta-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.pipeline-step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 14px;
 }
 
 .button-primary,
@@ -235,6 +278,14 @@ a {
     font-size: 20px;
   }
 
+  .case-title-long {
+    font-size: clamp(34px, 4.6vw, 58px);
+  }
+
+  .case-title-solid {
+    font-size: clamp(32px, 3.8vw, 48px);
+  }
+
   .section-rail {
     writing-mode: vertical-rl;
     min-height: 420px;
@@ -257,7 +308,8 @@ a {
   }
 
   .section-copy {
-    font-size: 16px;
+    font-size: 17px;
+    line-height: 1.72;
   }
 
   .button-primary,

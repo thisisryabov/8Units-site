@@ -9,14 +9,9 @@ export function CaseCard({ item, index }: CaseCardProps) {
   const number = String(index + 1).padStart(2, "0");
   const hasVideo = Boolean(item.videoEmbedUrl || item.externalVideoUrl);
   const isLead = index === 0;
-  const spanClass =
-    index === 0
-      ? "lg:col-span-6"
-      : index === 3
-        ? "lg:col-span-2"
-        : index === 4
-          ? "lg:col-span-4"
-          : "lg:col-span-3";
+  const isLongTitle = item.title.replace(/\s/g, "").length > 7;
+  const isSolidLongTitle = !item.title.includes(" ") && item.title.length > 9;
+  const spanClass = index === 0 ? "lg:col-span-6" : "lg:col-span-3";
   const offsetClass = index === 2 || index === 5 ? "lg:mt-16" : "";
   const articleClass = [
     "case-card group grid overflow-hidden border border-[#D8D2C8] bg-[#FFFFFF]/64 transition duration-300 hover:-translate-y-1 hover:border-[#0A0A0A] hover:bg-[#FFFFFF]",
@@ -40,6 +35,14 @@ export function CaseCard({ item, index }: CaseCardProps) {
           <span className="absolute inset-y-0 left-2/3 w-px bg-[#D8D2C8]" />
           <span className="absolute inset-x-0 top-1/3 h-px bg-[#D8D2C8]" />
           <span className="absolute inset-x-0 top-2/3 h-px bg-[#D8D2C8]" />
+          <span className="absolute left-4 top-4 h-5 w-px bg-[#0A0A0A]" />
+          <span className="absolute left-4 top-4 h-px w-5 bg-[#0A0A0A]" />
+          <span className="absolute right-4 top-4 h-5 w-px bg-[#0A0A0A]" />
+          <span className="absolute right-4 top-4 h-px w-5 bg-[#0A0A0A]" />
+          <span className="absolute bottom-4 left-4 h-5 w-px bg-[#0A0A0A]" />
+          <span className="absolute bottom-4 left-4 h-px w-5 bg-[#0A0A0A]" />
+          <span className="absolute bottom-4 right-4 h-5 w-px bg-[#0A0A0A]" />
+          <span className="absolute bottom-4 right-4 h-px w-5 bg-[#0A0A0A]" />
         </div>
 
         <div className="relative flex items-start justify-between gap-6">
@@ -49,6 +52,7 @@ export function CaseCard({ item, index }: CaseCardProps) {
           <div className="text-right">
             <span className="meta-label block text-[#555555]">{item.category}</span>
             <span className="meta-label mt-2 block">PLAY / SOON</span>
+            <span className="meta-label mt-2 block">16:9 / FRAME</span>
           </div>
         </div>
 
@@ -56,7 +60,16 @@ export function CaseCard({ item, index }: CaseCardProps) {
           <p className="meta-label mb-4">
             {item.client}
           </p>
-          <h3 className="break-words text-[42px] font-bold uppercase leading-[0.92] tracking-[0] text-[#0A0A0A] sm:text-[64px] lg:text-[68px] xl:text-[76px]">
+          <h3
+            className={[
+              "case-title font-bold uppercase tracking-[0] text-[#0A0A0A]",
+              isSolidLongTitle
+                ? "case-title-solid"
+                : isLongTitle
+                ? "case-title-long"
+                : "text-[42px] leading-[0.92] sm:text-[64px] lg:text-[68px] xl:text-[76px]",
+            ].join(" ")}
+          >
             {item.title}
           </h3>
         </div>
@@ -73,6 +86,22 @@ export function CaseCard({ item, index }: CaseCardProps) {
             <p className="meta-label mb-5 text-[#0A0A0A]">
               Featured case / {number}
             </p>
+          ) : null}
+          {isLead ? (
+            <div className="production-meta mb-8">
+              <div className="production-meta-row">
+                <span>FORMAT</span>
+                <span>Corporate video</span>
+              </div>
+              <div className="production-meta-row">
+                <span>STATUS</span>
+                <span>Coming soon</span>
+              </div>
+              <div className="production-meta-row">
+                <span>OUTPUT</span>
+                <span>Film + digital</span>
+              </div>
+            </div>
           ) : null}
           <p className="max-w-xl text-lg leading-relaxed text-[#555555]">
             {item.description}
@@ -102,6 +131,11 @@ export function CaseCard({ item, index }: CaseCardProps) {
               <p className="text-sm text-[#8A8A8A]">Видео скоро будет добавлено</p>
             </div>
           )}
+          <div className="flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.12em] text-[#8A8A8A]">
+            <span>PRODUCTION</span>
+            <span className="h-px flex-1 bg-[#D8D2C8]" />
+            <span>FRAME {number}</span>
+          </div>
         </div>
       </div>
     </article>

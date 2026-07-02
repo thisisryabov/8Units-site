@@ -60,8 +60,8 @@ export function Approach() {
               <p className="section-copy">
                 Мы работаем не от съемочного дня, а от задачи. Сначала понимаем,
                 зачем нужно видео, где оно будет жить, кто его увидит и какой
-                результат должен появиться. Потом подбираем формат, команду и способ
-                производства.
+                результат должен появиться. Потом подбираем формат, команду и
+                способ производства.
               </p>
             </div>
           </div>
@@ -85,7 +85,7 @@ export function Approach() {
                   <h3 className="text-3xl font-bold leading-tight tracking-[0] text-[#0A0A0A] lg:col-span-3">
                     {principle.title}
                   </h3>
-                  <p className="text-base leading-relaxed text-[#555555] lg:col-span-3">
+                  <p className="text-[17px] leading-relaxed text-[#555555] lg:col-span-3">
                     {principle.description}
                   </p>
                 </article>
@@ -94,14 +94,17 @@ export function Approach() {
           </div>
 
           <div className="mt-10 border-y border-[#D8D2C8] bg-[#ECE8DF] py-6">
-            <div className="flex flex-col gap-4 px-5 sm:px-6 md:flex-row md:flex-wrap md:items-center md:px-8">
+            <div className="grid gap-4 px-5 sm:px-6 md:flex md:flex-wrap md:items-center md:px-8">
               {process.map((step, index) => (
-                <div key={step} className="flex flex-col gap-4 md:flex-row md:items-center">
+                <div key={step} className="pipeline-step md:flex md:gap-4">
+                  <span className="inline-flex h-7 w-7 items-center justify-center border border-[#D8D2C8] text-[11px] font-bold text-[#8A8A8A] md:hidden">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
                   <span className="text-sm font-bold uppercase tracking-[0.12em] text-[#0A0A0A]">
                     {step}
                   </span>
                   {index < process.length - 1 ? (
-                    <span className="h-8 w-px bg-[#D8D2C8] md:h-px md:w-10" />
+                    <span className="col-start-1 row-start-2 h-8 w-px justify-self-center bg-[#D8D2C8] md:h-px md:w-10" />
                   ) : null}
                 </div>
               ))}
