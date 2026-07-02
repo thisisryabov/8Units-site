@@ -6,22 +6,22 @@ const navItems = [
 
 export function Header() {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-[#2A2A2A]/80 bg-[#0B0B0B]/86 backdrop-blur-xl">
-      <div className="mx-auto flex h-18 max-w-[1680px] items-center justify-between px-5 sm:px-8 lg:px-12">
+    <header className="sticky inset-x-0 top-0 z-50 border-b border-[#D8D2C8] bg-[#F6F4EF]/92 backdrop-blur-xl">
+      <div className="mx-auto grid h-16 max-w-[1440px] grid-cols-[1fr_auto] items-center gap-6 px-5 sm:px-10 lg:h-[72px] lg:grid-cols-12 lg:px-16">
         <a
           href="#top"
-          className="text-sm font-semibold uppercase tracking-[0.18em] text-white"
+          className="text-sm font-bold uppercase tracking-[0.14em] text-[#0A0A0A] lg:col-span-3"
           aria-label="8Units на главную"
         >
           8UNITS
         </a>
 
-        <nav className="hidden items-center gap-8 text-xs font-medium uppercase tracking-[0.16em] text-[#A3A3A3] md:flex">
+        <nav className="hidden items-center justify-center gap-8 text-xs font-bold uppercase tracking-[0.12em] text-[#555555] md:flex lg:col-span-6">
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="transition-colors duration-200 hover:text-white"
+              className="transition-colors duration-200 hover:text-[#0A0A0A]"
             >
               {item.label}
             </a>
@@ -30,7 +30,7 @@ export function Header() {
 
         <a
           href="https://t.me/"
-          className="inline-flex min-h-11 items-center justify-center border border-white px-5 text-xs font-semibold uppercase tracking-[0.14em] text-white transition-colors duration-200 hover:bg-white hover:text-[#0B0B0B]"
+          className="inline-flex min-h-10 items-center justify-center border border-[#0A0A0A] px-4 text-xs font-bold uppercase tracking-[0.12em] text-[#0A0A0A] transition-colors duration-200 hover:bg-[#0A0A0A] hover:text-[#F6F4EF] lg:col-span-3 lg:justify-self-end"
         >
           Написать
         </a>
