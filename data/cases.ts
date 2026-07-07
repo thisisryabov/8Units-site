@@ -16,7 +16,8 @@ export const cases: CaseItem[] = [
     title: "GAZPROM",
     client: "GAZPROM",
     category: "Corporate video",
-    description: "Видеопроект для корпоративной коммуникации, бренда или события.",
+    description:
+      "Проект для крупной корпоративной коммуникации: задача, команда, производство и финальный материал для делового использования.",
     thumbnail: "",
     videoEmbedUrl: "",
     externalVideoUrl: "",
@@ -27,7 +28,8 @@ export const cases: CaseItem[] = [
     title: "DIGNIORI ARTS",
     client: "DIGNIORI ARTS",
     category: "Brand film",
-    description: "Визуальный проект для бренда, продукта или коммуникационной задачи.",
+    description:
+      "Брендовая история, где визуальный язык помогает точнее показать характер проекта, предмет и контекст.",
     thumbnail: "",
     videoEmbedUrl: "",
     externalVideoUrl: "",
@@ -38,7 +40,8 @@ export const cases: CaseItem[] = [
     title: "NESTEROV",
     client: "NESTEROV",
     category: "Digital content",
-    description: "Видео и digital-контент под задачу бренда, эксперта или компании.",
+    description:
+      "Digital-формат для коммуникации с аудиторией: короткий путь от смысла к готовому материалу.",
     thumbnail: "",
     videoEmbedUrl: "",
     externalVideoUrl: "",
@@ -49,7 +52,8 @@ export const cases: CaseItem[] = [
     title: "FOODPROD",
     client: "FOODPROD",
     category: "Production content",
-    description: "Видеопроект о продукте, производстве, команде или бизнес-процессе.",
+    description:
+      "Производственный контент о продукте, процессе и команде без лишней постановочности.",
     thumbnail: "",
     videoEmbedUrl: "",
     externalVideoUrl: "",
@@ -61,7 +65,7 @@ export const cases: CaseItem[] = [
     client: "RBS",
     category: "Corporate video",
     description:
-      "Корпоративный видеопроект для презентации, внутренней или внешней коммуникации.",
+      "Материал для презентации, внутренней или внешней коммуникации, собранный вокруг конкретной задачи.",
     thumbnail: "",
     videoEmbedUrl: "",
     externalVideoUrl: "",
@@ -73,7 +77,7 @@ export const cases: CaseItem[] = [
     client: "GIDROSISTEMA",
     category: "Industrial video",
     description:
-      "Видеоконтент для компании, производства, промышленного или инженерного направления.",
+      "Индустриальная история для компании, производства или инженерного направления с ясной структурой.",
     thumbnail: "",
     videoEmbedUrl: "",
     externalVideoUrl: "",
@@ -84,7 +88,20 @@ export const cases: CaseItem[] = [
     title: "GRIFFINS",
     client: "GRIFFINS",
     category: "Brand content",
-    description: "Видеопроект для бренда, команды или коммуникационной кампании.",
+    description:
+      "Контент для бренда, команды или коммуникационной кампании: формат подбирается под задачу, а не наоборот.",
+    thumbnail: "",
+    videoEmbedUrl: "",
+    externalVideoUrl: "",
+    featured: false,
+  },
+  {
+    slug: "events",
+    title: "EVENTS",
+    client: "EVENTS",
+    category: "Event production",
+    description:
+      "Видео для событий, форумов, конференций и корпоративных мероприятий: от съемки и репортажа до итогового ролика и контента для коммуникаций.",
     thumbnail: "",
     videoEmbedUrl: "",
     externalVideoUrl: "",

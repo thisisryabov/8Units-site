@@ -11,10 +11,11 @@ export function CaseCard({ item, index }: CaseCardProps) {
   const isLead = index === 0;
   const isLongTitle = item.title.replace(/\s/g, "").length > 7;
   const isSolidLongTitle = !item.title.includes(" ") && item.title.length > 9;
-  const spanClass = index === 0 ? "lg:col-span-6" : "lg:col-span-3";
-  const offsetClass = index === 2 || index === 5 ? "lg:mt-16" : "";
+  const spanClass =
+    index === 0 ? "lg:col-span-6" : index === 6 ? "lg:col-span-6" : "lg:col-span-3";
+  const offsetClass = index === 2 || index === 4 ? "lg:mt-16" : "";
   const articleClass = [
-    "case-card group grid overflow-hidden border border-[#D8D2C8] bg-[#FFFFFF]/68 transition duration-300 hover:-translate-y-1 hover:border-[#0A0A0A] hover:bg-[#FFFFFF]",
+    "case-card group grid overflow-hidden border border-[#D8D2C8] bg-[#FFFFFF]/72 transition duration-300 hover:-translate-y-1 hover:border-[#0A0A0A] hover:bg-[#FFFFFF]",
     "lg:grid-cols-12",
     spanClass,
     offsetClass,
@@ -26,8 +27,8 @@ export function CaseCard({ item, index }: CaseCardProps) {
     <article className={articleClass}>
       <div
         className={[
-          "relative flex min-h-80 flex-col justify-between border-b border-[#D8D2C8] bg-[#ECE8DF] p-6 sm:p-8 lg:border-b-0 lg:border-r",
-          isLead ? "lg:col-span-7 lg:min-h-[580px]" : "lg:col-span-12 lg:min-h-[410px]",
+          "case-frame relative flex min-h-80 flex-col justify-between border-b border-[#D8D2C8] bg-[#ECE8DF] p-6 sm:p-8",
+          isLead ? "lg:col-span-7 lg:min-h-[580px] lg:border-b-0 lg:border-r" : "lg:col-span-12 lg:min-h-[430px]",
         ].join(" ")}
       >
         <div className="pointer-events-none absolute inset-0">
@@ -83,7 +84,7 @@ export function CaseCard({ item, index }: CaseCardProps) {
       >
         <div>
           {item.featured ? (
-            <p className="meta-label mb-5 text-[#0A0A0A]">
+            <p className="serif-accent mb-5 text-lg leading-snug text-[#555555]">
               Featured case / {number}
             </p>
           ) : null}
@@ -91,7 +92,7 @@ export function CaseCard({ item, index }: CaseCardProps) {
             <div className="production-meta mb-8">
               <div className="production-meta-row">
                 <span>FORMAT</span>
-                <span>Corporate video</span>
+                <span>{item.category}</span>
               </div>
               <div className="production-meta-row">
                 <span>STATUS</span>
@@ -121,13 +122,12 @@ export function CaseCard({ item, index }: CaseCardProps) {
             </a>
           ) : (
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-              <button
-                className="inline-flex min-h-12 w-fit cursor-default items-center border border-[#0A0A0A] px-6 py-4 text-xs font-bold uppercase tracking-[0.1em] text-[#0A0A0A]"
-                type="button"
-                disabled
+              <a
+                className="inline-flex min-h-12 w-fit items-center border border-[#0A0A0A] px-6 py-4 text-xs font-bold uppercase tracking-[0.1em] text-[#0A0A0A] transition-colors duration-200 hover:bg-[#0A0A0A] hover:text-[#F6F4EF]"
+                href="#contact"
               >
                 Смотреть проект <span className="ml-3">→</span>
-              </button>
+              </a>
               <p className="text-sm text-[#8A8A8A]">Видео скоро будет добавлено</p>
             </div>
           )}

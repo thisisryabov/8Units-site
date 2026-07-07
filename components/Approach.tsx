@@ -2,17 +2,17 @@ const principles = [
   {
     title: "Разбираемся в задаче",
     description:
-      "Уточняем, кому адресован проект, где будет использоваться видео и какой результат нужен клиенту.",
+      "Уточняем, кому адресован проект, где будет использоваться материал и какой результат нужен клиенту.",
   },
   {
     title: "Подбираем формат",
     description:
-      "Иногда нужен большой фильм. Иногда — серия коротких роликов, digital-формат, документальная история или видео для события.",
+      "Не каждый запрос требует большого продакшна. Иногда нужен фильм, иногда серия коротких роликов, digital-формат, документальная история или видео для события.",
   },
   {
     title: "Собираем команду",
     description:
-      "Под проект подбираются специалисты, которые лучше всего подходят под задачу: режиссеры, операторы, продюсеры, монтажеры, графика, звук.",
+      "Под каждый проект подбираются специалисты, которые лучше всего подходят под задачу: режиссеры, операторы, продюсеры, монтажеры, графика, звук.",
   },
   {
     title: "Берем на себя процесс",
@@ -22,7 +22,7 @@ const principles = [
   {
     title: "Отвечаем за результат",
     description:
-      "Наша задача — не просто снять материал, а собрать готовый видеопродукт, который можно использовать в бизнесе.",
+      "Наша задача — не просто снять материал, а собрать готовый продукт, который можно использовать в бизнесе, коммуникации, презентациях, соцсетях или событиях.",
   },
 ];
 
@@ -32,13 +32,16 @@ export function Approach() {
       <div className="grid gap-10 lg:grid-cols-12 lg:gap-6">
         <div className="section-rail lg:col-span-2">
           <p className="meta-label">HOW WE WORK / PRODUCTION LOGIC</p>
+          <p className="serif-accent hidden max-w-[180px] text-lg leading-snug text-[#555555] md:block lg:max-w-none">
+            The camera appears after the idea is clear.
+          </p>
           <p className="text-5xl font-bold leading-none text-[#0A0A0A] lg:text-7xl">
             03
           </p>
         </div>
 
         <div className="lg:col-span-10">
-          <div className="grid gap-12 border-y border-[#D8D2C8] py-12 lg:grid-cols-10 lg:gap-6 lg:py-20">
+          <div className="editorial-rule grid gap-12 border-y border-[#D8D2C8] py-12 lg:grid-cols-10 lg:gap-6 lg:py-20">
             <div className="lg:col-span-6">
               <h2 className="section-title">
                 НЕ НАЧИНАЕМ
@@ -49,16 +52,16 @@ export function Approach() {
             <div className="lg:col-span-4 lg:self-end">
               <p className="section-copy">
                 Мы работаем не от съемочного дня, а от задачи. Сначала понимаем,
-                зачем нужно видео, где оно будет жить, кто его увидит и какой
-                результат должен появиться. Потом подбираем формат, команду и
-                способ производства.
+                зачем нужен проект, кто его увидит и какой результат должен
+                появиться. Потом подбираем формат, команду и способ
+                производства.
               </p>
             </div>
           </div>
 
           <div className="grid border-b border-[#D8D2C8] lg:grid-cols-10">
             <div className="hidden border-r border-[#D8D2C8] py-12 lg:col-span-2 lg:block">
-              <p className="meta-label sticky top-28 max-w-[180px]">
+              <p className="serif-accent sticky top-28 max-w-[180px] text-lg leading-snug text-[#555555]">
                 PRINCIPLES / 01-05
               </p>
             </div>

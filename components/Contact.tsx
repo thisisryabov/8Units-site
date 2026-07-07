@@ -4,6 +4,9 @@ export function Contact() {
       <div className="grid gap-10 lg:grid-cols-12 lg:gap-6">
         <div className="section-rail lg:col-span-2">
           <p className="meta-label">FINAL PAGE / TELEGRAM</p>
+          <p className="serif-accent hidden max-w-[180px] text-lg leading-snug text-[#555555] md:block lg:max-w-none">
+            A short conversation is enough to start.
+          </p>
           <p className="text-5xl font-bold leading-none text-[#0A0A0A] lg:text-7xl">
             04
           </p>
@@ -25,8 +28,9 @@ export function Contact() {
 
           <div className="relative mt-14 flex flex-col justify-end gap-9 border-t border-[#D8D2C8] pt-8 lg:col-span-3 lg:mt-0 lg:border-l lg:border-t-0 lg:pl-12 lg:pr-2 lg:pt-0">
             <p className="section-copy">
-              Напишите в Telegram, если хотите обсудить видео, съемку, идею, кейс
-              или задачу, для которой пока нет понятного формата.
+              Напишите в Telegram, если хотите обсудить съемку, идею, кейс или
+              задачу, для которой пока нет понятного формата. Начнем с
+              нормального разговора, а не с брифа на сорок вопросов.
             </p>
             <a className="button-primary w-full sm:w-fit lg:w-full" href="https://t.me/">
               Написать в Telegram

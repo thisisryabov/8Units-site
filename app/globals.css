@@ -57,7 +57,7 @@ a {
 }
 
 .section-title {
-  font-size: 56px;
+  font-size: 54px;
   font-weight: 700;
   line-height: 0.9;
   letter-spacing: 0;
@@ -82,12 +82,48 @@ a {
   text-transform: uppercase;
 }
 
+.serif-accent {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.editorial-rule {
+  position: relative;
+}
+
+.editorial-rule::before,
+.editorial-rule::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(216, 210, 200, 0.72);
+  content: "";
+}
+
+.editorial-rule::before {
+  left: 33.333%;
+}
+
+.editorial-rule::after {
+  left: 66.666%;
+}
+
 .editorial-number {
   color: var(--text-primary);
-  font-size: clamp(80px, 14vw, 220px);
+  font-size: 84px;
   font-weight: 700;
   letter-spacing: 0;
   line-height: 0.8;
+}
+
+.hero-title {
+  font-size: 64px;
+  line-height: 0.86;
+  letter-spacing: 0;
 }
 
 .section-rail {
@@ -96,7 +132,7 @@ a {
   justify-content: space-between;
   gap: 24px;
   border-top: 1px solid var(--border);
-  padding-top: 20ppx;
+  padding-top: 20px;
 }
 
 .case-title {
@@ -107,13 +143,23 @@ a {
 }
 
 .case-title-long {
-  font-size: clamp(32px, 8vw, 52px);
+  font-size: 34px;
   line-height: 0.94;
 }
 
 .case-title-solid {
-  font-size: clamp(30px, 7vw, 44px);
+  font-size: 31px;
   line-height: 0.94;
+}
+
+.case-frame::after {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: min(58%, 280px);
+  height: min(36%, 160px);
+  border: 1px solid rgba(10, 10, 10, 0.42);
+  content: "";
+  transform: translate(-50%, -50%);
 }
 
 .production-meta {
@@ -227,6 +273,10 @@ a {
   animation-delay: 380ms;
 }
 
+.case-card:nth-child(8) {
+  animation-delay: 440ms;
+}
+
 @keyframes enter {
   from {
     opacity: 0;
@@ -257,6 +307,22 @@ a {
   .section-title {
     font-size: 88px;
   }
+
+  .hero-title {
+    font-size: 96px;
+  }
+
+  .editorial-number {
+    font-size: 132px;
+  }
+
+  .case-title-long {
+    font-size: 48px;
+  }
+
+  .case-title-solid {
+    font-size: 42px;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -282,11 +348,15 @@ a {
   }
 
   .case-title-long {
-    font-size: clamp(34px, 4.6vw, 58px);
+    font-size: 54px;
   }
 
   .case-title-solid {
-    font-size: clamp(32px, 3.8vw, 48px);
+    font-size: 42px;
+  }
+
+  .hero-title {
+    font-size: 142px;
   }
 
   .section-rail {
@@ -303,6 +373,28 @@ a {
   .section-title {
     font-size: 140px;
   }
+
+  .hero-title {
+    font-size: 164px;
+  }
+
+  .editorial-number {
+    font-size: 220px;
+  }
+
+  .case-title-long {
+    font-size: 58px;
+  }
+
+  .case-title-solid {
+    font-size: 48px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .hero-title {
+    font-size: 190px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -318,6 +410,11 @@ a {
   .button-primary,
   .button-secondary {
     width: 100%;
+  }
+
+  .production-meta-row {
+    display: grid;
+    gap: 4px;
   }
 }
 
